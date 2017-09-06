@@ -3,9 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:StyleDemo"
              x:Class="StyleDemo.MainPage">
-
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <x:String x:Key="FontAt">None</x:String>
+      <x:String x:Key="FontF">Verdana</x:String>
+      <x:String x:Key="FontS">20</x:String>
+      <Style TargetType="View" x:Key="BaseStyle">
+        <Setter Property="Margin" Value="2,0,2,0"></Setter>
+      </Style>
+      <Style TargetType="Entry" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="BackgroundColor" Value="DarkOrange"/>
+        <Setter Property="FontAttributes" Value="{StaticResource FontAt}"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource FontF}"></Setter>
+        <Setter Property="FontSize" Value="{StaticResource FontS}"></Setter>
+        <Setter Property="Opacity" Value="0.5"></Setter>
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+	<!--<Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />-->
+  <StackLayout>
+    <Entry Text="text1"></Entry>
+    <Entry Text="text2"></Entry>
+    <Entry Text="text3"></Entry>
+  </StackLayout>
 
 </ContentPage>
