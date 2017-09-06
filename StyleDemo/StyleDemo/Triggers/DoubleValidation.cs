@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace StyleDemo.Triggers
 {
@@ -9,7 +8,7 @@ namespace StyleDemo.Triggers
     {
       if (sender == null) return;
       double result;
-      var isValid = Double.TryParse(sender.Text, out result);
+      var isValid = double.TryParse(sender.Text, out result);
       sender.TextColor = isValid ? Color.Black : Color.Red;
     }
   }

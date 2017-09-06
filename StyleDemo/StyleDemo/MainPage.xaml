@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:StyleDemo"
              xmlns:localT="clr-namespace:StyleDemo.Triggers"
+             xmlns:localB="clr-namespace:StyleDemo.Behaviors"
              x:Class="StyleDemo.MainPage">
   <ContentPage.Resources>
     <ResourceDictionary>
@@ -25,6 +26,9 @@
             <Setter Property="Opacity" Value="0.5"></Setter>
           </Trigger>
         </Style.Triggers>
+        <Style.Behaviors>
+          <localB:NumericEntryBehavior></localB:NumericEntryBehavior>
+        </Style.Behaviors>
       </Style>
     </ResourceDictionary>
   </ContentPage.Resources>
