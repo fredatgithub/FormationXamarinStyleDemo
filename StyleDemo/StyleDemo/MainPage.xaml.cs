@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 
 namespace StyleDemo
 {
@@ -7,6 +8,12 @@ namespace StyleDemo
     public MainPage()
     {
       InitializeComponent();
+    }
+
+    private async void Button_OnClicked(object sender, EventArgs e)
+    {
+      //imgLogo.Rotation = 0;
+      //await imgLogo.RotateTo(360, 250);
     }
   }
 }

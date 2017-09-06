@@ -5,6 +5,7 @@
              x:Class="StyleDemo.MainPage">
   <ContentPage.Resources>
     <ResourceDictionary>
+      
       <x:String x:Key="FontAt">None</x:String>
       <x:String x:Key="FontF">Verdana</x:String>
       <x:String x:Key="FontS">20</x:String>
@@ -17,6 +18,12 @@
         <Setter Property="FontFamily" Value="{StaticResource FontF}"></Setter>
         <Setter Property="FontSize" Value="{StaticResource FontS}"></Setter>
         <Setter Property="Opacity" Value="0.5"></Setter>
+        <Style.Triggers>
+          <Trigger TargetType="Entry" Property="IsFocused"  Value="True">
+            <Setter Property="BackgroundColor" Value="Gray"></Setter>
+            <Setter Property="Opacity" Value="0.5"></Setter>
+          </Trigger>
+        </Style.Triggers>
       </Style>
     </ResourceDictionary>
   </ContentPage.Resources>
@@ -25,6 +32,8 @@
     <Entry Text="text1"></Entry>
     <Entry Text="text2"></Entry>
     <Entry Text="text3"></Entry>
+    <Button Text="Animation" Clicked="Button_OnClicked"></Button>
+    <!--<Image x:Name="imgLogo" HorizontalOptions="Start" Width="200" Source="icon.png"></Image>-->
   </StackLayout>
 
 </ContentPage>
