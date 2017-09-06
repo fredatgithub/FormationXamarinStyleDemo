@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:StyleDemo"
+             xmlns:localT="clr-namespace:StyleDemo.Triggers"
              x:Class="StyleDemo.MainPage">
   <ContentPage.Resources>
     <ResourceDictionary>
-      
+
       <x:String x:Key="FontAt">None</x:String>
       <x:String x:Key="FontF">Verdana</x:String>
       <x:String x:Key="FontS">20</x:String>
@@ -27,13 +28,29 @@
       </Style>
     </ResourceDictionary>
   </ContentPage.Resources>
-	<!--<Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />-->
   <StackLayout>
-    <Entry Text="text1"></Entry>
+    <Entry Text="text1" x:Name="Entry1"></Entry>
     <Entry Text="text2"></Entry>
     <Entry Text="text3"></Entry>
     <Button Text="Animation" Clicked="Button_OnClicked"></Button>
+    <Entry Focused="VisualElement_OnFocused" Placeholder="num" x:Name="txtNum" Text="2">
+      <Entry.Triggers>
+        <EventTrigger Event="TextChanged">
+          <localT:DoubleValidation />
+        </EventTrigger>
+      </Entry.Triggers>
+    </Entry>
     <!--<Image x:Name="imgLogo" HorizontalOptions="Start" Width="200" Source="icon.png"></Image>-->
+    <!--<Label x:Name="lbl1" Text="test"></Label>-->
+    <!--<Label Text="nombre" x:Name="Lbl1">
+      <Label.Triggers>
+        <DataTrigger TargetType="Label"
+                     Binding="{Binding Source={x:Reference Entry1}, Path=IsFocused}" Value="True">
+          <Setter Property="TextColor" Value="Black"></Setter>
+          <Setter Property="FontAttributes" Value="bold"></Setter>
+        </DataTrigger>
+      </Label.Triggers>
+    </Label>-->
   </StackLayout>
 
 </ContentPage>
